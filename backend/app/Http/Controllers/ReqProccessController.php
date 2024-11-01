@@ -16,6 +16,13 @@ class ReqProccessController extends Controller
         return view('req_proccess.index');
     }
 
+    public function getReqTraffic(Request $request)
+    {
+        $chunk = $request->input('chunk', 100);
+        $data = \App\Models\ReqProccessModel::paginate($chunk);
+        return response()->json($data);
+    }
+
     /***
      * Sum request traffic if duplicate key
      * @param array $data

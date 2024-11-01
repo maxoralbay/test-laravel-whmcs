@@ -23,3 +23,5 @@ Route::get('/', function () {
 });
 // proccess request traffic
 Route::post('/proccessReqTraffic', 'App\Http\Controllers\ReqProccessController@proccessReqTraffic');
+// get request traffic
+Route::get('/getReqTraffic', 'App\Http\Controllers\ReqProccessController@getReqTraffic');
